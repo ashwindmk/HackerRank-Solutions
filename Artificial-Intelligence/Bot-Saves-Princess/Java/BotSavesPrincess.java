@@ -13,6 +13,7 @@ public class BotSavesPrincess
         for(int i = 0; i < m; i++)
         {
             String line = br.readLine();
+            line = line.replaceAll(" ", "");
             grid[i] = (line.trim()).toCharArray();
         }
 
