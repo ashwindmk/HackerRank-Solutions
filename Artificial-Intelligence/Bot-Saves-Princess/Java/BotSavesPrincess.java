@@ -1,50 +1,39 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-/**
- * Created by ashwin on 10/1/17.
- */
 public class BotSavesPrincess
 {
-    public static void main(String[] args)
+    public static void main(String[] args) throws IOException
     {
-        Scanner in = new Scanner(System.in);
-        int m = in.nextInt();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int m = Integer.parseInt(br.readLine());
 
-        String grid[][] = new String[m][m];
+        char grid[][] = new char[m][m];
         for(int i = 0; i < m; i++)
         {
-            for(int j=0;j<m;j++)
-            {
-                grid[i][j] = in.next();
-            }
+            String line = br.readLine();
+            grid[i] = (line.trim()).toCharArray();
         }
 
         displayPathtoPrincess(m, grid);
     }
 
-    static void displayPathtoPrincess(int m, String[][] grid)
+    static void displayPathtoPrincess(int m, char[][] grid)
     {
         int botRow = 0, botCol = 0, princessRow = 0, princessCol = 0;
 
-        // Get bot coordinates
+        // Get bot and princess coordinates
         for (int r = 0; r < m; r++)
         {
             for (int c = 0; c < grid.length; c++)
             {
-                if (grid[r][c].equalsIgnoreCase("m"))
+                if (grid[r][c] == 'm' || grid[r][c] == 'M')
                 {
                     botRow = r;
                     botCol = c;
                 }
-            }
-        }
-
-        // Get princess coordinates
-        for (int r = 0; r < m; r++)
-        {
-            for (int c = 0; c < grid.length; c++)
-            {
-                if (grid[r][c].equalsIgnoreCase("P"))
+                else if (grid[r][c] == 'p' || grid[r][c] == 'P')
                 {
                     princessRow = r;
                     princessCol = c;
@@ -52,7 +41,7 @@ public class BotSavesPrincess
             }
         }
 
-        // Move the bot up or down till bot reaches same row
+        // Move the bot up or down till bot reaches same row as princess
         if( princessRow < botRow )
         {
             while(botRow != princessRow)
@@ -70,7 +59,7 @@ public class BotSavesPrincess
             }
         }
 
-        // Move the bot left or right till bot reaches same column
+        // Move the bot left or right till bot reaches same column as princess
         if( princessCol < botCol )
         {
             while(botCol != princessCol)
