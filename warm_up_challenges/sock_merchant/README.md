@@ -81,3 +81,13 @@ public class Solution {
     }
 }
 ```
+
+### Solution
+
+There are two approaches to solve this problem.
+
+ 1. [Java Solution using HashMap](https://github.com/ashwindmk/HackerRank-Solutions/blob/master/warm_up_challenges/sock_merchant/java/SockMerchantMap.java)
+
+ 2. [Java Solution using HashSet](https://github.com/ashwindmk/HackerRank-Solutions/blob/master/warm_up_challenges/sock_merchant/java/SockMerchantSet.java)
+
+ Solution using HashSet is more efficient than the solution using HashMap.

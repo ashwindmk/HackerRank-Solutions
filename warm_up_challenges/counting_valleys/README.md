@@ -80,3 +80,7 @@ public class Solution {
     }
 }
 ```
+
+### Solution
+
+[Java Solution](https://github.com/ashwindmk/HackerRank-Solutions/blob/master/warm_up_challenges/counting_valleys/java/CountingValleys.java)
