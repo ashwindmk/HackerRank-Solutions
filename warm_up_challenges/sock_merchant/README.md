@@ -34,7 +34,7 @@ Return the total number of matching pairs of socks that John can sell.
 
 3
 
-### Solution
+### Solution Structure
 
 ```java
 import java.io.*;

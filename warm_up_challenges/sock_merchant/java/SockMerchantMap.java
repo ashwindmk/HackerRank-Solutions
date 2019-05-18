@@ -13,7 +13,8 @@ import java.util.HashMap;
  * 2
  */
 
-public class SockMerchant {
+// This solution uses a HashMap which is more space consuming than HashSet.
+public class SockMerchantMap {
     public static void main(String[] args) {
         int n = 9;
         int[] ar = {10, 20, 20, 10, 10, 30, 50, 10, 20};
